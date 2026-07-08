@@ -59,7 +59,7 @@ const ResumeSection = () => {
           <motion.img 
             src={handCursor}
             alt="Pointer Hand"
-            className="absolute -right-[70px] top-[15px] w-[180px] h-[180px] pointer-events-none drop-shadow-2xl z-20"
+            className="absolute -right-[30px] md:-right-[70px] top-[15px] w-[120px] h-[120px] md:w-[180px] md:h-[180px] pointer-events-none drop-shadow-2xl z-20"
             initial={{ x: 60, y: 80, opacity: 0, rotate: 0 }}
             whileInView={{ 
               x: [80, 0, 0, 0, 0, 0, 80],

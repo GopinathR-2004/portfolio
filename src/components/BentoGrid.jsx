@@ -66,7 +66,7 @@ const BentoGrid = ({ featuredProjects, designSystem, caseStudy }) => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="font-serif text-[42px] md:text-[68px] text-[#111111] font-medium mb-6 leading-[1.1] max-w-[820px]"
+            className="font-serif text-[36px] md:text-[68px] text-[#111111] font-medium mb-6 leading-[1.1] max-w-[820px]"
           >
             I tell stories through design.
           </motion.h2>
@@ -103,7 +103,7 @@ const BentoGrid = ({ featuredProjects, designSystem, caseStudy }) => {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col"
               >
-                <h3 className="font-serif text-[40px] md:text-[56px] text-white leading-tight mb-4">
+                <h3 className="font-serif text-[32px] md:text-[56px] text-white leading-tight mb-4">
                   {activeProject.title}
                 </h3>
                 <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10 max-w-[400px]">
@@ -111,7 +111,7 @@ const BentoGrid = ({ featuredProjects, designSystem, caseStudy }) => {
                 </p>
                 
                 {/* Logo Row Indicator */}
-                <div className="flex items-center gap-6 mt-auto">
+                <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-auto">
                   {featuredProjects.map((proj, idx) => (
                     <div 
                       key={idx}
@@ -169,7 +169,7 @@ const BentoGrid = ({ featuredProjects, designSystem, caseStudy }) => {
         >
           {/* Content */}
           <div className="p-10 pb-0 relative z-10 flex flex-col h-full">
-            <h3 className="font-serif text-[40px] text-[#090909] leading-tight mb-2">
+            <h3 className="font-serif text-[32px] md:text-[40px] text-[#090909] leading-tight mb-2">
               {designSystem.title}
             </h3>
             <p className="text-[#090909]/70 text-base mb-6 max-w-[280px]">
@@ -195,7 +195,7 @@ const BentoGrid = ({ featuredProjects, designSystem, caseStudy }) => {
         >
           {/* Content */}
           <div className="p-10 pb-0 relative z-10 flex flex-col h-full">
-            <h3 className="font-serif text-[40px] text-[#090909] leading-tight mb-2">
+            <h3 className="font-serif text-[32px] md:text-[40px] text-[#090909] leading-tight mb-2">
               {caseStudy.title}
             </h3>
             <p className="text-[#090909]/70 text-base mb-6 max-w-[280px]">

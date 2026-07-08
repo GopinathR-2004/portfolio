@@ -50,7 +50,7 @@ const GraphicalWorks = () => {
         {/* Header */}
         <div className="relative z-10 flex flex-col items-center text-center px-6 mb-16">
           <h2 
-            className="font-serif text-[48px] md:text-[64px] text-white font-medium mb-4 leading-tight"
+            className="font-serif text-[36px] md:text-[64px] text-white font-medium mb-4 leading-tight"
           >
             Graphical works
           </h2>
@@ -69,7 +69,7 @@ const GraphicalWorks = () => {
             <motion.div 
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className="w-full bg-[#F5F5F5] rounded-[32px] overflow-hidden flex flex-col pt-10 px-10 relative h-[420px] group border border-white/10"
+              className="w-full bg-[#F5F5F5] rounded-[32px] overflow-hidden flex flex-col pt-8 md:pt-10 px-6 md:px-10 relative h-[420px] group border border-white/10"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="font-bold text-blue-500 text-xl tracking-tighter">Nautinati</div>
@@ -91,7 +91,7 @@ const GraphicalWorks = () => {
             <motion.div 
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className="w-full bg-[#F5F5F5] rounded-[32px] overflow-hidden flex flex-col pt-10 px-10 relative h-[420px] group border border-white/10"
+              className="w-full bg-[#F5F5F5] rounded-[32px] overflow-hidden flex flex-col pt-8 md:pt-10 px-6 md:px-10 relative h-[420px] group border border-white/10"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-10 h-10 bg-[#0B0F19] rounded-xl flex items-center justify-center overflow-hidden">
@@ -118,7 +118,7 @@ const GraphicalWorks = () => {
             <motion.div 
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className="w-full h-full bg-[#F5F5F5] rounded-[32px] overflow-hidden flex flex-col pt-10 px-8 relative group border border-white/10"
+              className="w-full h-full bg-[#F5F5F5] rounded-[32px] overflow-hidden flex flex-col pt-8 md:pt-10 px-6 md:px-8 relative group border border-white/10 min-h-[420px]"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-[#FFD100] rounded-xl flex items-center justify-center text-black font-bold text-xl">

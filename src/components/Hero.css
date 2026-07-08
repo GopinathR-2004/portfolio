@@ -264,25 +264,63 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 100svh;
+    height: auto;
+    background-position: center top;
+  }
+  
   .hero-content-wrapper {
-    padding: 100px 24px 60px 24px;
+    padding: 130px 20px 60px 20px;
   }
   
+  .hero-label {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    margin-bottom: 20px;
+  }
+
   .hero-heading {
-    font-size: 52px;
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    margin-bottom: 20px;
+    letter-spacing: -1px;
   }
   
-  .hero-cards-container {
-    transform: scale(0.666); 
+  .hero-role {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
   }
-  
-  .hero-btn-primary, .hero-btn-secondary {
-    width: 100%;
+
+  .hero-dot {
+    display: none;
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    max-width: 320px;
+    line-height: 1.7;
+    margin: 0 auto 32px auto;
   }
   
   .hero-buttons {
     flex-direction: column;
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto 40px auto;
+    gap: 16px;
+  }
+
+  .hero-btn-primary, .hero-btn-secondary {
     width: 100%;
+    height: 56px;
+  }
+  
+  .hero-cards-container {
+    transform: scale(0.58); 
+    margin-top: -110px;
+    margin-bottom: -110px;
   }
 }

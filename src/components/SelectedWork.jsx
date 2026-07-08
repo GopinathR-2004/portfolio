@@ -121,7 +121,7 @@ const Card = ({ project, i, smoothProgress, totalCards }) => {
         boxShadow,
         transformOrigin: "top center",
       }}
-      className={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1120px] h-[720px] rounded-[32px] overflow-hidden border border-white/10 flex flex-col ${project.color}`}
+      className={`absolute top-0 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] md:w-full max-w-[1120px] h-[480px] md:h-[600px] lg:h-[720px] rounded-[24px] md:rounded-[32px] overflow-hidden border border-white/10 flex flex-col ${project.color}`}
     >
       {/* 65% Image Area */}
       <div className="w-full h-[65%] relative overflow-hidden bg-black/40">
@@ -135,16 +135,16 @@ const Card = ({ project, i, smoothProgress, totalCards }) => {
       </div>
 
       {/* 35% Content Area */}
-      <div className="w-full h-[35%] p-10 flex flex-col justify-between bg-black/20">
+      <div className="w-full h-[40%] md:h-[35%] p-6 md:p-10 flex flex-col justify-between bg-black/20">
         <div className="flex justify-between items-start">
-          <div className="max-w-[80%]">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-semibold mb-3">
+          <div className="max-w-full md:max-w-[80%]">
+            <div className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/50 font-semibold mb-2 md:mb-3">
               {project.category}
             </div>
-            <h3 className="text-3xl font-serif text-white tracking-wide mb-3">
+            <h3 className="text-2xl md:text-3xl font-serif text-white tracking-wide mb-2 md:mb-3">
               {project.title}
             </h3>
-            <p className="text-white/60 text-sm leading-relaxed line-clamp-2 max-w-[90%]">
+            <p className="text-white/60 text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-2 max-w-full md:max-w-[90%]">
               {project.desc}
             </p>
           </div>
@@ -182,7 +182,7 @@ const SelectedWork = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-[64px] md:text-[80px] text-white font-medium mb-6 leading-[1.1] max-w-[900px]"
+          className="font-serif text-[48px] md:text-[64px] lg:text-[80px] text-white font-medium mb-4 md:mb-6 leading-[1.1] max-w-[900px]"
         >
           Selected Work
         </motion.h2>
@@ -204,7 +204,7 @@ const SelectedWork = () => {
           Sticky Container 
           position: sticky; top: 12vh; 
         */}
-        <div className="sticky top-[12vh] w-full h-[720px] overflow-visible">
+        <div className="sticky top-[12vh] w-full h-[480px] md:h-[600px] lg:h-[720px] overflow-visible">
           
           {/* Cinematic Stars overlaying the whole viewport behind cards */}
           <div className="absolute top-[-12vh] left-0 w-full h-[100vh] pointer-events-none z-[-1] overflow-hidden">

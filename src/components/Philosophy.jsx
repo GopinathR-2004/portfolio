@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import centerImage from '../assets/myimage.png';
 import leftImage from '../assets/leftimage.png';
@@ -8,6 +8,14 @@ import CinematicStars from './CinematicStars';
 const Philosophy = () => {
   const containerRef = useRef(null);
   
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Main section scroll progress
   const { scrollYProgress: sectionProgress } = useScroll({
     target: containerRef,
@@ -52,12 +60,12 @@ const Philosophy = () => {
   });
 
   // Left Image
-  const leftX = useTransform(smoothShowcase, [0, 1], [0, -180]);
+  const leftX = useTransform(smoothShowcase, [0, 1], [0, isMobile ? -90 : -180]);
   const leftRotate = useTransform(smoothShowcase, [0, 1], [-4, -10]);
   const leftScale = useTransform(smoothShowcase, [0, 1], [0.92, 0.92]);
   
   // Right Image
-  const rightX = useTransform(smoothShowcase, [0, 1], [0, 180]);
+  const rightX = useTransform(smoothShowcase, [0, 1], [0, isMobile ? 90 : 180]);
   const rightRotate = useTransform(smoothShowcase, [0, 1], [4, 10]);
   const rightScale = useTransform(smoothShowcase, [0, 1], [0.92, 0.92]);
 
@@ -92,9 +100,9 @@ const Philosophy = () => {
       <div className="relative z-10 w-full max-w-[1200px] flex flex-col items-center px-6">
         
         {/* Heading */}
-        <div ref={textRef} className="w-full max-w-[820px] mx-auto text-center mb-[56px]">
+        <div ref={textRef} className="w-full max-w-[820px] mx-auto text-center mb-[32px] md:mb-[56px]">
           <motion.h2 
-            className="text-[72px] leading-[1.18] font-medium text-white tracking-[-0.02em]"
+            className="text-[40px] md:text-[56px] lg:text-[72px] leading-[1.18] font-medium text-white tracking-[-0.02em]"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif",
               y: headingY,
@@ -119,17 +127,15 @@ const Philosophy = () => {
         {/* Image Showcase */}
         <div 
           ref={showcaseRef}
-          className="relative w-full h-[600px] flex justify-center items-center mt-10 perspective-1000"
+          className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex justify-center items-center mt-10 perspective-1000"
         >
           {/* Left Image */}
           <motion.div 
-            className="absolute rounded-[24px] overflow-hidden shadow-2xl"
+            className="absolute rounded-[16px] md:rounded-[24px] overflow-hidden shadow-2xl w-[200px] h-[280px] md:w-[300px] md:h-[420px] lg:w-[380px] lg:h-[520px]"
             style={{
               x: leftX,
               rotate: leftRotate,
               scale: leftScale,
-              width: '380px',
-              height: '520px',
               zIndex: 10,
               boxShadow: '0 30px 60px -15px rgba(0,0,0,0.7)'
             }}
@@ -143,13 +149,11 @@ const Philosophy = () => {
 
           {/* Right Image */}
           <motion.div 
-            className="absolute rounded-[24px] overflow-hidden shadow-2xl"
+            className="absolute rounded-[16px] md:rounded-[24px] overflow-hidden shadow-2xl w-[200px] h-[280px] md:w-[300px] md:h-[420px] lg:w-[380px] lg:h-[520px]"
             style={{
               x: rightX,
               rotate: rightRotate,
               scale: rightScale,
-              width: '380px',
-              height: '520px',
               zIndex: 20,
               boxShadow: '0 30px 60px -15px rgba(0,0,0,0.7)'
             }}
@@ -163,13 +167,11 @@ const Philosophy = () => {
 
           {/* Center Portrait */}
           <motion.div 
-            className="absolute rounded-[24px] overflow-hidden shadow-2xl"
+            className="absolute rounded-[16px] md:rounded-[24px] overflow-hidden shadow-2xl w-[220px] h-[310px] md:w-[330px] md:h-[460px] lg:w-[420px] lg:h-[580px]"
             style={{
               scale: centerScale,
               y: centerY,
               opacity: centerOpacity,
-              width: '420px',
-              height: '580px',
               zIndex: 30,
               boxShadow: '0 40px 80px -20px rgba(0,0,0,0.8)'
             }}

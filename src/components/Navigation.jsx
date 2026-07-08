@@ -24,10 +24,8 @@ const Navigation = () => {
       className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
     >
       <motion.nav
-        className="flex items-center justify-between h-[52px] rounded-full px-6 transition-all duration-300"
+        className="flex items-center justify-between h-[56px] md:h-[52px] rounded-full px-5 md:px-6 transition-all duration-300 w-[92%] max-w-[360px] md:w-fit md:max-w-none md:min-w-[400px]"
         style={{
-          width: 'fit-content',
-          minWidth: '400px',
           backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.2)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
@@ -36,7 +34,7 @@ const Navigation = () => {
         }}
       >
         {/* Logo */}
-        <a href="#" className="text-white font-semibold text-sm tracking-widest mr-8 hover:opacity-80 transition-opacity">
+        <a href="#" className="text-white font-semibold text-[11px] md:text-sm tracking-widest md:mr-8 hover:opacity-80 transition-opacity">
           GOPINATH
         </a>
 

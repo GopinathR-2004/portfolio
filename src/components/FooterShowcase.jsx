@@ -46,7 +46,7 @@ const FooterShowcase = () => {
           className="flex items-center gap-6 mb-12 relative"
         >
           {/* Abstract Wave SVG behind the profile */}
-          <svg className="absolute right-[100%] mr-[-20px] top-1/2 -translate-y-1/2 w-[50px] h-[100px] text-[#332a13]" viewBox="0 0 50 100" fill="none">
+          <svg className="absolute right-[100%] mr-[-20px] top-1/2 -translate-y-1/2 w-[50px] h-[100px] text-[#332a13] hidden md:block" viewBox="0 0 50 100" fill="none">
             <path d="M 50 5 A 45 45 0 0 0 50 95" stroke="currentColor" strokeWidth="12" strokeLinecap="round" />
             <path d="M 50 30 A 20 20 0 0 0 50 70" stroke="currentColor" strokeWidth="12" strokeLinecap="round" />
           </svg>
@@ -79,7 +79,7 @@ const FooterShowcase = () => {
           <p className="text-[#666] text-[14px] uppercase tracking-widest mb-4">Contact me</p>
           <a 
             href="mailto:gopinathr9344@gmail.com" 
-            className="text-white text-[36px] md:text-[48px] hover:text-[#bbb] transition-colors tracking-tight" 
+            className="text-white text-[28px] md:text-[48px] hover:text-[#bbb] transition-colors tracking-tight break-all md:break-normal px-4" 
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             gopinathr9344@gmail.com

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import img1 from '../assets/skills/ui_visual_design.png';
@@ -19,9 +19,17 @@ const skillsData = [
 
 const StrategicSkills = () => {
   const [hoveredRow, setHoveredRow] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
-    <section className="relative w-full bg-[#FAFAFA] pt-[40px] pb-[120px] flex flex-col items-center z-10">
+    <section className="relative w-full bg-[#FAFAFA] pt-[40px] pb-[80px] md:pb-[120px] flex flex-col items-center z-10">
       <div className="w-full max-w-[1280px] px-6">
         
         {/* Top Header */}
@@ -43,8 +51,9 @@ const StrategicSkills = () => {
             <div 
               key={skill.id}
               className="relative border-b border-[#EAEAEA] group cursor-pointer"
-              onMouseEnter={() => setHoveredRow(index)}
-              onMouseLeave={() => setHoveredRow(null)}
+              onMouseEnter={() => !isMobile && setHoveredRow(index)}
+              onMouseLeave={() => !isMobile && setHoveredRow(null)}
+              onClick={() => isMobile && setHoveredRow(hoveredRow === index ? null : index)}
             >
               {/* Hover Background - Orange */}
               <div 
@@ -65,9 +74,28 @@ const StrategicSkills = () => {
                 </div>
               </div>
 
-              {/* Hover Image */}
+              {/* Mobile Accordion Image */}
               <AnimatePresence>
-                {hoveredRow === index && (
+                {isMobile && hoveredRow === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="relative z-10 overflow-hidden px-4 pb-6 w-full flex justify-center md:hidden"
+                  >
+                    <img 
+                      src={skill.img} 
+                      alt={skill.title} 
+                      className="w-full max-w-[360px] rounded-[12px] shadow-lg border border-black/5"
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Desktop Hover Image */}
+              <AnimatePresence>
+                {!isMobile && hoveredRow === index && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95, x: 20 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}

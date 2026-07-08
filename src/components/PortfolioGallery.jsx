@@ -73,7 +73,7 @@ const Card = ({ project }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.9, ease: easeOutExpo, delay: project.delay }}
-      className="shrink-0 relative w-[90vw] md:w-[420px] lg:w-[520px] h-[700px] rounded-[26px] overflow-hidden group"
+      className="shrink-0 relative w-[90vw] md:w-[420px] lg:w-[520px] h-[480px] md:h-[600px] lg:h-[700px] rounded-[26px] overflow-hidden group"
       style={{
         backgroundColor: '#1A1A1A',
         boxShadow: isHovered ? '0 14px 40px rgba(0,0,0,0.26)' : '0 10px 40px rgba(0,0,0,0.22)',
@@ -157,9 +157,9 @@ const PortfolioGallery = () => {
           className="flex w-max"
           style={{ 
             x, // Apply dynamic horizontal translation
-            gap: '32px',
-            paddingLeft: 'max(48px, calc((100vw - 1500px) / 2 + 48px))',
-            paddingRight: '48px'
+            gap: '24px',
+            paddingLeft: 'max(24px, calc((100vw - 1500px) / 2 + 24px))',
+            paddingRight: '24px'
           }}
         >
           {projects.map((proj) => (
